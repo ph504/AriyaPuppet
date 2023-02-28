@@ -25,13 +25,12 @@ public class LegController : MonoBehaviour
         return __instance;
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    void Start() {}
 
     // Update is called once per frame
-    void Update()
+    void Update() {}
+
+    void FixedUpdate()
     {
         float error = newChestPosition.position.z - chestPositionTracker.position.z;
         float legDist = leftLeg.position.z - rightLeg.position.z;
