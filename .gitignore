@@ -57,5 +57,7 @@ sysinfo.txt
 
 Assets/Plugins/Editor.meta
 Assets/Plugins.meta
+Assets/MOS
+Assets/MOS.meta
 TMP_Text.cs
 Fix TMP.BAT
