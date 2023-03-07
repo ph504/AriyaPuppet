@@ -16,7 +16,6 @@ public class MoveController : MonoBehaviour
     private Coroutine horizontalVelocityChangeRoutine;
 
     IEnumerator LerpVerticalVel() {
-        Debug.Log("started v coroutine");
         Vector3 startVel = rb.velocity;
         float timerVelChange = 0f; // timer for velocity change
         while(timerVelChange<1f){
@@ -27,15 +26,11 @@ public class MoveController : MonoBehaviour
                 Mathf.Lerp(startVel.z, vSpeed, timerVelChange));
 
             timerVelChange += Time.deltaTime;
-            Debug.Log("running v coroutine");
             yield return null;
         }
-        Debug.Log("yes");
-       
     }
 
     IEnumerator LerpHorizontalVel() {
-        Debug.Log("started h coroutine");
         Vector3 startVel = rb.velocity;
         float timerVelChange = 0f; // timer for velocity change
         while(timerVelChange<1f){
@@ -46,26 +41,21 @@ public class MoveController : MonoBehaviour
                 rb.velocity.z);
 
             timerVelChange += Time.deltaTime;
-            Debug.Log("running h coroutine");
             yield return null;
         }
-        Debug.Log("yes");
-       
     }
 
-    void Awake(){
+    void Awake() {
         rb = GetComponent<Rigidbody>();
     }
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         // rb.velocity = new Vector3(0f,0f,10f);
         // transform.position = new Vector3(0.0f,2.35f,0.0f);
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if(Input.GetKey(KeyCode.W)){
             vSpeed = forwardSpeed;
             if (vstate!="forward"){
